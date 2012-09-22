@@ -7,13 +7,15 @@ class List
 {
 public:
 	List(void);
-
-	//needs to include add, remove , reverse, sentinal, and yeah
-	//needs to have the number of items and index for where we are at
-
+	void add(Node*toAdd);
+	void remove(Node*toRemov);
 	void insertAfter(Node*where);//include the  data of the next node
 	void insertBefore(Node*where);//include the data to put in the next node here
 
-	~List(void);
+private:
+	Node*sentinal_;
+	int num_items;
+	int index;
+	
 };
 
