@@ -12,18 +12,26 @@ using namespace ci::app;
 
 
 rectangle::rectangle(){
-	red = 0;
-    green = 0;
-	blue = 0;
-};
+	c = Color8u(0,0,0);
+	x = 0;
+	y = 0;
+	width = 0;
+	height = 0;
+}
 
-
-
+rectangle::rectangle(Color8u c, int x , int y , int width, int height){
+	this->c = c;
+	this->x = x;
+	this->y = y;
+	this->height = height;
+	this->width = width;
+	
+}
 
 
 void rectangle::draw(){
 
 	//red then blue then green
-	gl::color(Color8u(0,60,195));
-	gl::drawSolidRect(Rectf(300,500, 300 , 400 ), false);
+	gl::color(c);
+	gl::drawSolidRect(Rectf(x,y,width,height) , false);
 	}

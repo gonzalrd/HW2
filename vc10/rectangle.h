@@ -13,12 +13,14 @@ class rectangle
 {
 public:
 		rectangle();
-		rectangle(int red, int green, int blue);
+		rectangle(Color8u c, int x , int y , int width, int height);
 		void draw();
 private:
 	//Defines the colors to put in the rectangle.
-	int red;
-	int blue;
-	int green;
-	
+	Color8u c;
+	int x;
+	int y;
+	int width;
+	int height;
+
 };
