@@ -3,7 +3,7 @@
 #include "cinder/gl/Texture.h"
 #include "cinder/ImageIo.h"
 #include "cinder/Surface.h"
-#include "cinder\rect.h"
+#include "cinder/rect.h"
 #include "rectangle.h"
 
 using namespace std;

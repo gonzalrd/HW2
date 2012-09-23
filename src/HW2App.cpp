@@ -32,7 +32,7 @@ private:
 
 //list and rectangles
 	List* lst;
-	rectangle* myRect_;
+	rectangle* oneRect_;
 
 
 };
@@ -46,11 +46,17 @@ void HW2App::setup()
 {
 	//creates a rectangle
 	Color8u c = Color8u(0, 60, 120);
- 	myRect_ = new rectangle(c,200,300,400,500);
+ 	oneRect_ = new rectangle(c,200,300,400,500);
+
+	rectangle* twoRect_ = new rectangle(c,100,350,350,450);
 
 	//create a nodes
 	Node* one = new Node();
-	one->data_= myRect_;
+	Node* two = new Node();
+
+	//adds rectangles two nodes
+	one->data_= oneRect_;
+	two->data_= twoRect_;
 
 	//creates a list
 	lst =  new List();
@@ -58,7 +64,7 @@ void HW2App::setup()
 	//adds node
 
 	lst->add(one);
-
+	lst->add(two);
 }
 
 void HW2App::mouseDown( MouseEvent event )
@@ -83,8 +89,9 @@ void HW2App::draw()
 	
 	while(nd!=lst->sentinal_){
 		nd->data_->draw();
-	}
 
+		nd= nd->next_;
+	}
 
 
 

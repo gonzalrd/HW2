@@ -15,8 +15,7 @@
 List::List()
 {
 	num_items = 0;
-	sentinal_->next_ = NULL;
-	sentinal_->prev_ = NULL;
+	sentinal_ = new Node();
 }
 
 //Adds a node at the end of the list right before it reaches the sentinal again.

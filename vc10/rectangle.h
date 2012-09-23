@@ -2,7 +2,8 @@
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/Surface.h"
-#include "cinder\rect.h"
+#include "cinder/rect.h"
+#pragma once
 #include "cinder/ImageIo.h"
 
 using namespace std;
@@ -15,6 +16,8 @@ public:
 		rectangle();
 		rectangle(Color8u c, int x , int y , int width, int height);
 		void draw();
+
+		~rectangle(void);
 private:
 	//Defines the colors to put in the rectangle.
 	Color8u c;
