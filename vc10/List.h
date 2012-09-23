@@ -18,8 +18,10 @@ public:
 	void insertAfter(Node*where);//include the  data of the next node
 	void insertBefore(Node*where);//include the data to put in the next node here
 
-private:
 	Node*sentinal_;
+
+private:
+	//Node*sentinal_;
 	int num_items;
 	int index;
 	

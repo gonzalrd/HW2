@@ -3,7 +3,7 @@
 #include "cinder/gl/Texture.h"
 #include "cinder/ImageIo.h"
 #include "cinder/Surface.h"
-#include "cinder\rect.h"
+#include "cinder/rect.h"
 #include "../vc10/rectangle.h"
 #include "../vc10/List.h"
 #include "../vc10/Node.h"
@@ -78,7 +78,15 @@ void HW2App::draw()
 {
 
 	//goes through list and draws rectangle.
-	myRect_.draw();
+
+	Node*nd = lst->sentinal_->next_;
+	
+	while(nd!=lst->sentinal_){
+		nd->data_->draw();
+	}
+
+
+
 
 }
 
