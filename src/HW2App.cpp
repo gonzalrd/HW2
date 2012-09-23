@@ -5,6 +5,8 @@
 #include "cinder/Surface.h"
 #include "cinder\rect.h"
 #include "../vc10/rectangle.h"
+#include "../vc10/List.h"
+#include "../vc10/Node.h"
 
 
 using namespace ci;
@@ -28,8 +30,9 @@ private:
 	static const int kAppHeight=600;
 	static const int kTextureSize=1024;
 
-
-	rectangle myRect_;
+//list and rectangles
+	List* lst;
+	rectangle* myRect_;
 
 
 };
@@ -41,7 +44,21 @@ void HW2App::prepareSettings(Settings* settings){
 
 void HW2App::setup()
 {
- 	myRect_ =  rectangle();	
+	//creates a rectangle
+	Color8u c = Color8u(0, 60, 120);
+ 	myRect_ = new rectangle(c,200,300,400,500);
+
+	//create a nodes
+	Node* one = new Node();
+	one->data_= myRect_;
+
+	//creates a list
+	lst =  new List();
+
+	//adds node
+
+	lst->add(one);
+
 }
 
 void HW2App::mouseDown( MouseEvent event )
@@ -59,6 +76,8 @@ void HW2App::update()
 
 void HW2App::draw()
 {
+
+	//goes through list and draws rectangle.
 	myRect_.draw();
 
 }

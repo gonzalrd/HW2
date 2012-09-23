@@ -1,8 +1,18 @@
+#include "cinder/app/AppBasic.h"
+#include "cinder/gl/gl.h"
+#include "cinder/gl/Texture.h"
+#include "cinder/ImageIo.h"
+#include "cinder/Surface.h"
+#include "cinder/rect.h"
+#include "rectangle.h"
+#include "Node.h"
 #include "List.h"
 
 
+
+
 //contructor for the list. creates an empty list only containing the sentinal.
-List::List(void)
+List::List()
 {
 	num_items = 0;
 	sentinal_->next_ = NULL;
@@ -10,7 +20,7 @@ List::List(void)
 }
 
 //Adds a node at the end of the list right before it reaches the sentinal again.
-void List::add(Node*toAdd){
+void List::add(Node* toAdd){
 
 	//condition that nothing is currently in the list.
 	if(num_items ==0){
